@@ -20,6 +20,7 @@ p, h2, h4 {font-family: $f-serif;}
 
 h1 {font-size: 74px;}
 h2 {font-size: 44px;}
+h3 {font-size: 38px;}
 h4 {font-size: 20px;}
 p, h5 {color: $c-gray}
 p {font-size: 14px;}
@@ -120,7 +121,10 @@ header {
 }
 
 section {
-    .container {margin: 60px auto}
+    .container {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
 }
 
 .services-card {
@@ -136,3 +140,32 @@ section {
     }
 }
 
+.portfolio {
+    background-color: $c-lgray;
+    .portfolio-header {
+        margin: 30px auto;
+        text-align: center;
+        h3, p {margin: 0; padding: 0;}
+        h3 {
+            text-transform: uppercase;
+            font-weight: 300;
+        }
+    }
+    .portfolio-card {
+        margin-bottom: 20px;
+        .card-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px 0px;
+            text-align: center;
+            img {
+                object-fit: contain; 
+                width: 100%;
+                height: auto;}
+            h4 {margin-bottom: 0px;}
+            p {margin: 0;}
+        }
+    }
+}
