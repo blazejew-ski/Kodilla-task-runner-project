@@ -61,7 +61,16 @@ header {
             display: none;
         }
         .navbar-links-wrapper {
-            span {display: none;}
+            position: relative;
+            span {
+                display: none;
+                border-radius: 5px;
+                border: 1px solid $c-white;
+                padding: 10px 20px;
+                color: $c-white;
+                min-width: 160px;
+                text-align: center;
+            }
             ul {
                 padding: 0;
                 margin: 0;
@@ -70,6 +79,9 @@ header {
                     display: inline-block;
                     margin: 0 36px 0 0;
                     position: relative;
+                    &:nth-child(5) { 
+                        margin: 0;
+                    }
                     .nav-link {
                         text-transform: uppercase;
                         text-decoration: none;
@@ -184,7 +196,7 @@ footer {
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        height: 100px;
+        min-height: 100px;
     }
     .col-xs-novis {display: none;}
     .footer-txt-wrapper {
@@ -236,52 +248,39 @@ footer {
     h2 {font-size: 34px;}
     h3 {font-size: 28px;}
     h4 {font-size: 18px;}
-    nav {
-        
-        .navbar-links-wrapper {
-            position: relative;
-            span {
-                display: inline-block !important;
-                border-radius: 5px;
-                border: 1px solid $c-white;
-                padding: 10px 20px;
-                color: $c-white;
-                min-width: 160px;
-                text-align: center;
-            }
-            ul {
-                display: none;
-                li {
-                    margin: 0 14px 0 0 !important;
-                    &:nth-child(5) { 
-                        margin: 0 !important;
-                    }
+    header {
+        nav {
+            .navbar-links-wrapper {
+                span {
+                    display: inline-block;
                 }
-            }
-            &:hover {
-                span {border-radius: 5px 5px 0 0;}
                 ul {
-                display: block;
-                padding: 0;
-                margin: 0;
-                list-style-type: 0;
-                position: absolute;
-                background-color: $c-white;
-                min-width: 160px;
-                text-align: center;
+                    display: none;
+                    position: absolute;
+                    background-color: $c-white;
+                    min-width: 160px;
+                    text-align: center;
                     li {
-                        display: block;
-                        margin: 5px 10px !important;
-                        position: relative;
+                        margin: 5px 10px 5px 10px;
+                        &:nth-child(5) { 
+                            margin: 5px 10px 5px 10px;
+                        }
                         .nav-link {
-                            text-transform: uppercase;
-                            text-decoration: none;
                             color: $c-black;
-                            font-weight: 200;
-                            font-size: 14px;
                             &:hover {
                                 color: $c-yellow;
                             }
+                        } 
+                    }
+                }
+                &:hover {
+                    span {
+                        border-radius: 5px 5px 0 0;
+                    }
+                    ul {
+                    display: block;
+                        li {
+                            display: block;
                         }
                     }
                 }
@@ -290,14 +289,13 @@ footer {
     }
     footer {
         .container-fluid {
-            height: 100%;
             flex-direction: column;
             .footer-txt-wrapper {
                 justify-content: center;
+                margin-top: 30px;
                 margin-bottom: 15px;
             }
             .footer-social-wrapper {
-                justify-content: center;
                 margin-bottom: 30px;
             }
             .footer-blank {display: none;}
